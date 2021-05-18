@@ -41,7 +41,7 @@ class CodeSearch extends Component{
     }
     componentDidMount(){
         console.log("CodeSearch componentDidMount");
-        let api_url = "http://127.0.0.1:5000/codes";
+        let api_url = "https://testapi-v1.azurewebsites.net/codes";
         let options = [];
         fetch(api_url)
             .then(res => res.json())

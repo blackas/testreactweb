@@ -50,7 +50,7 @@ class CodePrice extends Component {
     componentDidUpdate(prevProps, prevState, snapshot){
         if(prevProps.code !== this.props.code){
             //console.log("CodePrice componentDidupdate", this.props.code);
-            let api_url = "http://127.0.0.1:5000/codes/"+this.props.code+"/sortflag/des/price";
+            let api_url = "https://testapi-v1.azurewebsites.net/codes/"+this.props.code+"/sortflag/des/price";
             fetch(api_url)
                 .then(res => res.json())
                 .then(data =>{

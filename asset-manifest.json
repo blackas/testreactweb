@@ -1,10 +1,10 @@
 {
-  "main.js": "/testreactweb/static/js/main.ba32a38f.chunk.js",
-  "main.js.map": "/testreactweb/static/js/main.ba32a38f.chunk.js.map",
+  "main.js": "/testreactweb/static/js/main.2f79d57f.chunk.js",
+  "main.js.map": "/testreactweb/static/js/main.2f79d57f.chunk.js.map",
   "runtime~main.js": "/testreactweb/static/js/runtime~main.4cf1499d.js",
   "runtime~main.js.map": "/testreactweb/static/js/runtime~main.4cf1499d.js.map",
-  "static/js/2.9f2d15d3.chunk.js": "/testreactweb/static/js/2.9f2d15d3.chunk.js",
-  "static/js/2.9f2d15d3.chunk.js.map": "/testreactweb/static/js/2.9f2d15d3.chunk.js.map",
+  "static/js/2.cb909def.chunk.js": "/testreactweb/static/js/2.cb909def.chunk.js",
+  "static/js/2.cb909def.chunk.js.map": "/testreactweb/static/js/2.cb909def.chunk.js.map",
   "static/js/3.b77c858b.chunk.js": "/testreactweb/static/js/3.b77c858b.chunk.js",
   "static/js/3.b77c858b.chunk.js.map": "/testreactweb/static/js/3.b77c858b.chunk.js.map",
   "static/js/4.e146fa5b.chunk.js": "/testreactweb/static/js/4.e146fa5b.chunk.js",
@@ -12,6 +12,6 @@
   "static/js/5.fc3c1fbb.chunk.js": "/testreactweb/static/js/5.fc3c1fbb.chunk.js",
   "static/js/5.fc3c1fbb.chunk.js.map": "/testreactweb/static/js/5.fc3c1fbb.chunk.js.map",
   "index.html": "/testreactweb/index.html",
-  "precache-manifest.c01bf71a75755e9b4402c97e28313b27.js": "/testreactweb/precache-manifest.c01bf71a75755e9b4402c97e28313b27.js",
+  "precache-manifest.855f6746330ae95c0ccf3e3416d3fe80.js": "/testreactweb/precache-manifest.855f6746330ae95c0ccf3e3416d3fe80.js",
   "service-worker.js": "/testreactweb/service-worker.js"
 }

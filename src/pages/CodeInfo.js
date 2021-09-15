@@ -9,6 +9,8 @@ import Strategy from '../components/Strategy';
 import axios from 'axios';
 import { KAKAO_AUTH_URL } from "../components/Kakao/OAuth";
 
+const STOCK_API_URL = process.env.REACT_APP_STOCK_API_URL
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -62,7 +64,7 @@ class CodeInfo extends Component {
         this.interval = setInterval(this.tick, this.state.delay);
         if(this.state.kakaocode !== "" || this.state.kakaocode != undefined || this.state.kakaocode != null ){
             console.log(this.state.kakaocode)
-            let api_url = process.env.REACT_APP_STOCK_API_URL+"/GetKakaoAccessToken?kakaocode="+this.state.kakaocode;
+            let api_url = STOCK_API_URL+"/GetKakaoAccessToken?kakaocode="+this.state.kakaocode;
             fetch(api_url)
                 .then(res => res.json())
                 .then(data =>{
@@ -87,7 +89,7 @@ class CodeInfo extends Component {
                 <div>
                     <CodeSearch code={this.state.selectedCode} handleSelectedCode={this.handleSelectedCode} />
                 </div>
-                <button onClick={this.CallKakaoAuth}>카카오톡 공시정보받기</button>
+                <button onClick={this.CallKakaoAuth}>공시정보받기</button>
                 <RT_DartList />
                 <Grid item xs={12}>
 				    <Grid container spacing={10}>

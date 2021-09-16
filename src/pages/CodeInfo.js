@@ -7,9 +7,7 @@ import CodeChart from '../components/CodeChart';
 import { DartList, RT_DartList } from '../components/DartList';
 import Strategy from '../components/Strategy';
 import axios from 'axios';
-import { KAKAO_AUTH_URL } from "../components/Kakao/OAuth";
-
-const STOCK_API_URL = process.env.REACT_APP_STOCK_API_URL
+import { KAKAO_AUTH_URL, KAKAO_LOGOUT_URL } from "../components/Kakao/OAuth";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -39,14 +37,19 @@ class CodeInfo extends Component {
     constructor(props){
         super(props);
         let code = new URL(window.location.href).searchParams.get('code')
+        let state = new URL(window.location.href).searchParams.get('state')
+
         this.state = {
             selectedCode:"",
 			showflag:true,
             kakaocode : code,
+            userstate : state,
             delay : 1000
         }
+
 		this.handleToggleClick = this.handleToggleClick.bind(this);
-        this.CallKakaoAuth = this.CallKakaoAuth.bind(this);
+        this.CallKakaoAuth     = this.CallKakaoAuth.bind(this);
+        this.CallKakaoLogout   = this.CallKakaoLogout.bind(this);
     }
 	
 	handleToggleClick = (showflag)=>{
@@ -60,16 +63,24 @@ class CodeInfo extends Component {
       window.location.href = KAKAO_AUTH_URL
     }
 
+    CallKakaoLogout = () => {
+      window.location.href = KAKAO_LOGOUT_URL
+    }
+
     componentDidMount(){
         this.interval = setInterval(this.tick, this.state.delay);
         if(this.state.kakaocode !== "" || this.state.kakaocode != undefined || this.state.kakaocode != null ){
             console.log(this.state.kakaocode)
-            let api_url = STOCK_API_URL+"/GetKakaoAccessToken?kakaocode="+this.state.kakaocode;
+            let api_url = process.env.REACT_APP_STOCK_API_URL+"/GetKakaoAccessToken?kakaocode="+this.state.kakaocode;
             fetch(api_url)
                 .then(res => res.json())
                 .then(data =>{
                     console.log("result", data);
                 });
+        }
+
+        if(this.state.userstate !== "" || this.state.userstate != undefined || this.state.userstate != null ){
+            console.log(this.state.kakaocode)
         }
 
     }
@@ -89,7 +100,8 @@ class CodeInfo extends Component {
                 <div>
                     <CodeSearch code={this.state.selectedCode} handleSelectedCode={this.handleSelectedCode} />
                 </div>
-                <button onClick={this.CallKakaoAuth}>공시정보받기</button>
+                <button onClick={this.CallKakaoAuth}>카카오톡 공시정보받기</button>
+                <button onClick={this.CallKakaoLogout}>카카오 로그아웃</button>
                 <RT_DartList />
                 <Grid item xs={12}>
 				    <Grid container spacing={10}>

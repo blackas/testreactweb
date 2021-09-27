@@ -1,6 +1,6 @@
 {
-  "main.js": "/testreactweb/static/js/main.1cc037de.chunk.js",
-  "main.js.map": "/testreactweb/static/js/main.1cc037de.chunk.js.map",
+  "main.js": "/testreactweb/static/js/main.12b6c852.chunk.js",
+  "main.js.map": "/testreactweb/static/js/main.12b6c852.chunk.js.map",
   "runtime~main.js": "/testreactweb/static/js/runtime~main.4cf1499d.js",
   "runtime~main.js.map": "/testreactweb/static/js/runtime~main.4cf1499d.js.map",
   "static/js/2.111b4e42.chunk.js": "/testreactweb/static/js/2.111b4e42.chunk.js",
@@ -12,6 +12,6 @@
   "static/js/5.fc3c1fbb.chunk.js": "/testreactweb/static/js/5.fc3c1fbb.chunk.js",
   "static/js/5.fc3c1fbb.chunk.js.map": "/testreactweb/static/js/5.fc3c1fbb.chunk.js.map",
   "index.html": "/testreactweb/index.html",
-  "precache-manifest.226fa6272404caeb3156ad951e087610.js": "/testreactweb/precache-manifest.226fa6272404caeb3156ad951e087610.js",
+  "precache-manifest.e5b88d734f12156057018ab3dec5e08a.js": "/testreactweb/precache-manifest.e5b88d734f12156057018ab3dec5e08a.js",
   "service-worker.js": "/testreactweb/service-worker.js"
 }

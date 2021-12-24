@@ -1,26 +1,29 @@
 {
   "files": {
-    "main.js": "/testreactweb/static/js/main.dfc701c7.chunk.js",
-    "main.js.map": "/testreactweb/static/js/main.dfc701c7.chunk.js.map",
-    "runtime-main.js": "/testreactweb/static/js/runtime-main.1b8fcd76.js",
-    "runtime-main.js.map": "/testreactweb/static/js/runtime-main.1b8fcd76.js.map",
-    "static/js/2.efa140c7.chunk.js": "/testreactweb/static/js/2.efa140c7.chunk.js",
-    "static/js/2.efa140c7.chunk.js.map": "/testreactweb/static/js/2.efa140c7.chunk.js.map",
-    "static/js/3.5378d7a1.chunk.js": "/testreactweb/static/js/3.5378d7a1.chunk.js",
-    "static/js/3.5378d7a1.chunk.js.map": "/testreactweb/static/js/3.5378d7a1.chunk.js.map",
-    "static/js/4.eedbfb1d.chunk.js": "/testreactweb/static/js/4.eedbfb1d.chunk.js",
-    "static/js/4.eedbfb1d.chunk.js.map": "/testreactweb/static/js/4.eedbfb1d.chunk.js.map",
-    "static/js/5.0534509d.chunk.js": "/testreactweb/static/js/5.0534509d.chunk.js",
-    "static/js/5.0534509d.chunk.js.map": "/testreactweb/static/js/5.0534509d.chunk.js.map",
+    "main.js": "/testreactweb/static/js/main.fa742aa7.chunk.js",
+    "main.js.map": "/testreactweb/static/js/main.fa742aa7.chunk.js.map",
+    "runtime-main.js": "/testreactweb/static/js/runtime-main.d22e5ea5.js",
+    "runtime-main.js.map": "/testreactweb/static/js/runtime-main.d22e5ea5.js.map",
+    "static/css/2.2b9aa98b.chunk.css": "/testreactweb/static/css/2.2b9aa98b.chunk.css",
+    "static/js/2.3bc1b617.chunk.js": "/testreactweb/static/js/2.3bc1b617.chunk.js",
+    "static/js/2.3bc1b617.chunk.js.map": "/testreactweb/static/js/2.3bc1b617.chunk.js.map",
+    "static/js/3.1eb1fb40.chunk.js": "/testreactweb/static/js/3.1eb1fb40.chunk.js",
+    "static/js/3.1eb1fb40.chunk.js.map": "/testreactweb/static/js/3.1eb1fb40.chunk.js.map",
+    "static/js/4.ef528d4a.chunk.js": "/testreactweb/static/js/4.ef528d4a.chunk.js",
+    "static/js/4.ef528d4a.chunk.js.map": "/testreactweb/static/js/4.ef528d4a.chunk.js.map",
+    "static/js/5.78a2a2a2.chunk.js": "/testreactweb/static/js/5.78a2a2a2.chunk.js",
+    "static/js/5.78a2a2a2.chunk.js.map": "/testreactweb/static/js/5.78a2a2a2.chunk.js.map",
     "index.html": "/testreactweb/index.html",
-    "static/js/2.efa140c7.chunk.js.LICENSE.txt": "/testreactweb/static/js/2.efa140c7.chunk.js.LICENSE.txt",
-    "static/js/3.5378d7a1.chunk.js.LICENSE.txt": "/testreactweb/static/js/3.5378d7a1.chunk.js.LICENSE.txt",
-    "static/js/4.eedbfb1d.chunk.js.LICENSE.txt": "/testreactweb/static/js/4.eedbfb1d.chunk.js.LICENSE.txt",
-    "static/js/5.0534509d.chunk.js.LICENSE.txt": "/testreactweb/static/js/5.0534509d.chunk.js.LICENSE.txt"
+    "static/css/2.2b9aa98b.chunk.css.map": "/testreactweb/static/css/2.2b9aa98b.chunk.css.map",
+    "static/js/2.3bc1b617.chunk.js.LICENSE.txt": "/testreactweb/static/js/2.3bc1b617.chunk.js.LICENSE.txt",
+    "static/js/3.1eb1fb40.chunk.js.LICENSE.txt": "/testreactweb/static/js/3.1eb1fb40.chunk.js.LICENSE.txt",
+    "static/js/4.ef528d4a.chunk.js.LICENSE.txt": "/testreactweb/static/js/4.ef528d4a.chunk.js.LICENSE.txt",
+    "static/js/5.78a2a2a2.chunk.js.LICENSE.txt": "/testreactweb/static/js/5.78a2a2a2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1b8fcd76.js",
-    "static/js/2.efa140c7.chunk.js",
-    "static/js/main.dfc701c7.chunk.js"
+    "static/js/runtime-main.d22e5ea5.js",
+    "static/css/2.2b9aa98b.chunk.css",
+    "static/js/2.3bc1b617.chunk.js",
+    "static/js/main.fa742aa7.chunk.js"
   ]
 }

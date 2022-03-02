@@ -12,16 +12,16 @@ class Strategy extends Component{
 
     componentDidUpdate(prevProps, prevState, snapshot){
 		console.log("Strategy componentDidUpdate" + prevProps);
-        if(prevProps.code !== this.props.code){
+        //if(prevProps.code !== this.props.code){
             //console.log("DartList componentDidupdate", this.props.userinput);
-            let api_url = "https://testapi-v1.azurewebsites.net/strategy?code="+this.props.code;
+            let api_url = process.env.REACT_APP_STOCK_API_URL+"/strategy?code="+this.props.code;
             fetch(api_url)
                 .then(res => res.json())
                 .then(data =>{
                     console.log("Strategy fetch", data);
 					this.setState({data:data["html"]});
                 });
-        }
+        //}
     }
     render(){
         return  (

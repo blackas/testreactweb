@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Navigation from './pages/Navigation';
-
-ReactDOM.render(<Navigation />, document.getElementById('root'));
+import { BrowserRouter } from 'react-router-dom';
+ReactDOM.render(
+	<BrowserRouter>
+		<Navigation />
+	</BrowserRouter>
+	, document.getElementById('root'));

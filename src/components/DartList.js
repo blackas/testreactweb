@@ -39,9 +39,8 @@ const tableIcons = {
 class DartList extends Component{
     constructor(props){
         super(props);
-        console.log("WordSearch constructor");
         this.state = { 
-			columns : [],//"date", "open", "high", "low", "close"],
+			columns : [],
             data:[],
         };
     }
@@ -49,16 +48,14 @@ class DartList extends Component{
     componentDidUpdate(prevProps, prevState, snapshot){
         if(prevProps.code !== this.props.code){
             //console.log("DartList componentDidupdate", this.props.userinput);
-            let api_url = "https://testapi-v1.azurewebsites.net/dart?corpcls=K&code="+this.props.code;
+            let api_url = process.env.REACT_APP_STOCK_API_URL+"/dart?corpcls=K&code="+this.props.code;
             fetch(api_url)
                 .then(res => res.json())
                 .then(data =>{
-                    console.log("price didupdate fetch", data);
                     this.setState({columns : [{title:"날짜", field:"rcept_dt"}, 
-                                            {title:"보고서명", field:"report_nm"}, 
-                                            {title:"보고서번호", field:"rcept_no", render:data => <a href={'http://dart.fss.or.kr/dsaf001/main.do?rcpNo='+data.rcept_no} target='_blank'>{data.rcept_no}</a>},
-                                            {title:"공시제출인명", field:"flr_nm"},
-                                            {title:"비고", field:"rm"}]})
+                                              {title:"보고서명", field:"report_nm", render:data => <a href={'http://dart.fss.or.kr/dsaf001/main.do?rcpNo='+data.rcept_no} target='_blank'>{data.report_nm}</a>}, 
+                                              {title:"공시제출인명", field:"flr_nm"},
+                                              {title:"비고", field:"rm"}]})
                     this.setState({data:data["dart_list"]});
                 });
         }
@@ -72,11 +69,50 @@ class DartList extends Component{
                         title={"종목 공시 정보"}
                         data={this.state.data}
                         columns={this.state.columns}
-                    />):<p>검색된 공시 정보가 없습니다.</p>
+                    />):(null)
                 }
             </div>
          );
     }
 }
 
-export default DartList;
+class RT_DartList extends Component{
+    constructor(props){
+        super(props);
+        this.state = { 
+            columns : [],
+            data:[],
+        };
+    }
+
+    componentDidMount(prevProps, prevState, snapshot){
+        if(this.props.showflag){
+            let api_url = process.env.REACT_APP_STOCK_API_URL+"/rt_dartlist"
+            fetch(api_url)
+                .then(res => res.json())
+                .then(data =>{
+                    this.setState({columns : [{title:"날짜", field:"rcept_dt"}, 
+                                              {title:"보고서명", field:"report_nm", render:data => <a href={'http://dart.fss.or.kr/dsaf001/main.do?rcpNo='+data.rcept_no} target='_blank'>{data.report_nm}</a>}, 
+                                              {title:"공시제출인명", field:"flr_nm"},
+                                              {title:"비고", field:"rm"}]})
+                    this.setState({data:data["list"]});
+                });
+        }
+    }
+    render(){
+        return  (
+            <div>
+                { this.props.showflag ?
+                    (<MaterialTable
+                        icons={tableIcons}
+                        title={"금일 실시간 공시"}
+                        data={this.state.data}
+                        columns={this.state.columns}
+                    />):(null)
+                }
+            </div>
+         );
+    }
+}
+
+export {DartList, RT_DartList}

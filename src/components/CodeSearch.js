@@ -9,7 +9,6 @@ import FormControl from '@material-ui/core/FormControl';
 class CodeSearch extends Component{
     constructor(props){
         super(props);
-        console.log("CondeSearch constructor");
         this.state = { 
             selectedOption:'',
             options : [],
@@ -19,15 +18,18 @@ class CodeSearch extends Component{
     }
 	
     handleSelectChange = (selectedOption)=>{
-        console.log("COdesearch handleSelectedChange", selectedOption);
         this.props.handleSelectedCode(selectedOption.code);
     }
 
     handleRadioChange = (event) =>{
 		this.state.value = event.target.value;
-        if(event.target.value==="spac"){
+        if(event.target.value==="코스피"){
             this.setState({
-                filteredOptions:this.state.options.filter(item=>item.is_spac==='Y')
+                filteredOptions:this.state.options.filter(item=>item.market==='1' && item.is_etf === "0")
+            })
+        }else if(event.target.value==="코스닥"){
+            this.setState({
+                filteredOptions:this.state.options.filter(item=>item.market==='2' && item.is_etf === "0")
             })
         }else if(event.target.value==="etf"){
             this.setState({
@@ -38,15 +40,14 @@ class CodeSearch extends Component{
                 filteredOptions:[],
             })
         }
+        //spec은 is_spec 설정..
     }
     componentDidMount(){
-        console.log("CodeSearch componentDidMount");
-        let api_url = "https://testapi-v1.azurewebsites.net/codes";
+        let api_url = process.env.REACT_APP_STOCK_API_URL+"/codes";
         let options = [];
         fetch(api_url)
             .then(res => res.json())
             .then(data =>{
-                console.log("didmount fetch", data);
                 data["code_list"].map(function(item){
                     item["value"] = item["code"]
                     item["label"] = item["name"] + "(" + item["code"] +")"
@@ -59,7 +60,6 @@ class CodeSearch extends Component{
     }
     render(){
         const { selectedOption, options, filteredOptions } = this.state;
-        console.log("CodeSearch render", options);
         return  (
             <div>
             {
@@ -79,19 +79,25 @@ class CodeSearch extends Component{
                 <FormControlLabel
                     value="all"
                     control={<Radio color="primary" />}
-                    label="ALL"
+                    label="전체"
+                    labelPlacement="end"
+                />
+                <FormControlLabel
+                    value="코스피"
+                    control={<Radio color="primary" />}
+                    label="코스피"
+                    labelPlacement="end"
+                />
+                <FormControlLabel
+                    value="코스닥"
+                    control={<Radio color="primary" />}
+                    label="코스닥"
                     labelPlacement="end"
                 />
                 <FormControlLabel
                     value="etf"
                     control={<Radio color="primary" />}
-                    label="ETF"
-                    labelPlacement="end"
-                />
-                <FormControlLabel
-                    value="spac"
-                    control={<Radio color="primary" />}
-                    label="SPAC"
+                    label="etf"
                     labelPlacement="end"
                 />
                 </RadioGroup>
